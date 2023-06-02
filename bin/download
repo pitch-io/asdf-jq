@@ -158,7 +158,7 @@ download() {
     local guessed_file=''
     if [ $platform = osx ]; then
       guessed_file="jq-osx-amd64"
-    elif [ $platform = linux && -n "$arch" ]; then
+    elif [ $platform = linux ] && [ -n "$arch" ]; then
       guessed_file="jq-linux$arch"
     fi
     local guess_successful=0
