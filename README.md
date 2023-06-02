@@ -1,6 +1,6 @@
 # asdf-jq
 
-![](https://github.com/AZMCode/asdf-jq/workflows/ci/badge.svg)
+![](https://github.com/lsanwick/asdf-jq/workflows/ci/badge.svg)
 
 [jq](https://jqlang.github.io/jq/) plugin for the [asdf](https://github.com/asdf-vm/asdf) version manager.
 
