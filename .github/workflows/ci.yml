@@ -7,9 +7,6 @@ on:
   pull_request:
     paths-ignore:
       - '**.md'
-  workflow_dispatch:
-    paths-ignore:
-      - '**.md'
 
 jobs:
   plugin_test:
@@ -23,7 +20,7 @@ jobs:
       - name: Silencing git over hex tag names
         run: "git config --global advice.objectNameWarning false"
       - name: Running asdf's plugin-test
-        uses: asdf-vm/actions/plugin-test@v1.0.1
+        uses: asdf-vm/actions/plugin-test@v2.2.0
         with:
           command: jq --version
         env:

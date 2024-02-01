@@ -1,13 +1,13 @@
 # asdf-jq
 
-![](https://github.com/AZMCode/asdf-jq/workflows/ci/badge.svg)
+[![ci](https://github.com/lsanwick/asdf-jq/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/lsanwick/asdf-jq/actions/workflows/ci.yml)
 
 [jq](https://jqlang.github.io/jq/) plugin for the [asdf](https://github.com/asdf-vm/asdf) version manager.
 
 ## Install
 
 ```
-asdf plugin-add jq https://github.com/AZMCode/asdf-jq.git
+asdf plugin-add jq https://github.com/lsanwick/asdf-jq.git
 ```
 
 ## Use
