@@ -34,13 +34,13 @@ get_arch(){
   if [ "$arch" == 'x86_64' ]; then
     echo '64'
   elif [ "$arch" == 'aarch64' ]; then
-    if echo $ASDF_INSTALL_VERSION | grep ^1\\.\[0-6\]; then
+    if echo $ASDF_INSTALL_VERSION | grep -q ^1\\.\[0-6\]; then
       echo '64'
     else
       echo '-arm64'
     fi
   elif [ "$arch" == 'arm64' ]; then
-    if echo $ASDF_INSTALL_VERSION | grep ^1\\.\[0-6\]; then
+    if echo $ASDF_INSTALL_VERSION | grep -q ^1\\.\[0-6\]; then
       echo '64'
     else
       echo '-arm64'
@@ -170,7 +170,9 @@ download() {
     declare -r platform=$(get_platform)
     declare -r arch=$(get_arch)
     local guessed_file=''
-    if [ $platform = osx ]; then
+    if [ $platform = osx ] && [ "$arch" = '-arm64' ]; then
+      guessed_file="jq-macos-arm64"
+    elif [ $platform = osx ]; then
       guessed_file="jq-osx-amd64"
     elif [ $platform = linux ] && [ -n "$arch" ]; then
       guessed_file="jq-linux$arch"
